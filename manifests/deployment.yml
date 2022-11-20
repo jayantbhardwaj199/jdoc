@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jayantbhardwajjdoc 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jayantbhardwajjdoc
+  template:
+    metadata:
+      labels:
+        app: jayantbhardwajjdoc 
+    spec:
+      containers:
+        - name: jayantbhardwajjdoc 
+          image: jdocregistrynew.azurecr.io/jayantbhardwajjdoc
+          ports:
+          - containerPort: 8080
