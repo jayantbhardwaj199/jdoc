@@ -83,8 +83,7 @@ stages:
   - deployment: DeployPullRequest
     displayName: Deploy Pull request
     condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/pull/'))
-    pool:
-      vmImage: $(vmImageName)
+    pool: Default
 
     environment: 'jayantbhardwaj199jdoc.$(k8sNamespaceForPR)'
     strategy:
