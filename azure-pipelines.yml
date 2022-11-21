@@ -54,8 +54,7 @@ stages:
   - deployment: Deploy
     condition: and(succeeded(), not(startsWith(variables['Build.SourceBranch'], 'refs/pull/')))
     displayName: Deploy
-    pool:
-      vmImage: $(vmImageName)
+    pool: Default
     environment: 'jayantbhardwaj199jdoc.default'
     strategy:
       runOnce:
