@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "testcluster-6ceb"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "testcluster-6ceb"
+  template:
+    metadata:
+      labels:
+        app: "testcluster-6ceb"
+    spec:
+      containers:
+        - name: "testcluster-6ceb"
+          image: "testacrnew2.azurecr.io/testcluster"
+          ports:
+          - containerPort: 8080
